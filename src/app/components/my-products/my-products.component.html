@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm" *ngFor="let product of myProducts; let i = index">
+            <a [routerLink]="['/my-products', product.product_id]">Visit</a>
+            <p>{{product.product_id}}</p>
+            <p>{{product.user_id}}</p>
+            <p>{{product.name}}</p>
+            <p>{{product.description}}</p>
+            <p>{{product.price}}</p>
+            <form action="" [formGroup]="deleteProductForm[i]" (submit)="deleteProduct(product.product_id)">                
+                <button class="btn btn-success mb-1">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<form [formGroup]="createProductForm" (ngSubmit)="submitCreateProduct()">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Description</label>
+        <input type="text" formControlName="description" class="form-control" id="exampleInputPassword1" placeholder="Description">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Price</label>
+        <input type="text" formControlName="price" class="form-control" id="exampleInputPassword1" placeholder="Price">
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Create product</button>
+</form>

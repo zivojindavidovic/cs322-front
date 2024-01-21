@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <p>{{product.product_id}}</p>
+        <p>{{product.user_id}}</p>
+        <p>{{product.name}}</p>
+        <p>{{product.description}}</p>
+        <p>{{product.price}}</p>
+    </div>
+</div>
+
+<form [formGroup]="updateProduct" (ngSubmit)="submitUpdateProduct()">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Price</label>
+        <input type="text" formControlName="price" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Price">
+    </div>
+    
+    <button type="submit" class="btn btn-primary mt-3">Create product</button>
+</form>

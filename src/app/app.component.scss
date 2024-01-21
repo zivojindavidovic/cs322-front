@@ -1,0 +1,42 @@
+#me {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+
+    .me-name{
+      display: block;
+      width: 80%;
+    }
+
+    .menu{
+        a{
+            display: block;
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover{
+            color: gray;
+            transition: ease 0.3s;
+        }
+    }
+}
+
+
+
+#content {
+  margin-left: 300px; 
+  padding: 20px;
+}
+
+  /* 
+  #content {
+    background-color: #f4f4f4;
+    overflow-y: auto; 
+    height: 100vh;
+  }*/

@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm" *ngFor="let product of products">
+            <p>Product ID: {{product.product_id}}</p>
+            <p> User ID: {{product.user_id}}</p>
+            <p>{{product.name}}</p>
+            <p>{{product.description}}</p>
+            <p>{{product.price}}</p>
+            <form [formGroup]="orderForm" (ngSubmit)="submitOrder(product.user_id, product.product_id)">
+                <button *ngIf="product.user_id !== userId" class="btn btn-primary my-2 d-block mx-auto">Buy</button>
+            </form>
+            <button *ngIf="product.user_id === userId" class="btn btn-danger d-block mx-auto"> Delete</button>
+        </div>
+    </div>
+</div>
